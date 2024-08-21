@@ -9,8 +9,8 @@
     "type": "git",
     "url": "https://github.com/yangga/next-api.git"
   },
-  "version": "0.0.1",
-  "description": "The Router of next-api",
+  "version": "0.0.2",
+  "description": "The OpenAPI of next-api",
   "type": "commonjs",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",

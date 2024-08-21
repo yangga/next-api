@@ -9,7 +9,7 @@ next-api is a library that handles data validation of [Nextjs Api Routes](https:
 ## Installation
 
 ```bash
-npm i @nystudio/nextapi-router
+npm i @nystudio/nextapi-core @nystudio/nextapi-router
 ```
 
 ## Features
@@ -64,7 +64,7 @@ Here is how to use open api with next-api
 ##### Install the dependencies
 
 ```bash
-npm i swagger-ui-react
+npm i @nystudio/nextapi-openapi swagger-ui-react
 ```
 
 ##### Register a route

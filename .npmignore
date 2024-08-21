@@ -1,0 +1,5 @@
+!lib/
+tsconfig*.json
+src/
+.prettierrc.json
+.eslintrc.json
