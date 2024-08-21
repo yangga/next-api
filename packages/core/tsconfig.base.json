@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "strict": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "checkJs": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "rootDir": "./src",
+    "composite": true
+  },
+  "exclude": ["node_modules", "lib", "dist", "coverage", "test", "tests", "spec", "specs"]
+}

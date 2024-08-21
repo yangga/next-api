@@ -1,0 +1,39 @@
+{
+  "name": "@next-api/core",
+  "author": {
+    "name": "yangga",
+    "email": "yangga0070@gmail.com",
+    "url": "http://github.com/yangga"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yangga/next-api.git"
+  },
+  "version": "0.0.1",
+  "description": "The Core of next-api",
+  "type": "commonjs",
+  "types": "./lib/cjs/types/index.d.ts",
+  "main": "./lib/cjs/index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/esm/types/index.d.ts",
+        "default": "./lib/esm/index.mjs"
+      },
+      "require": {
+        "types": "./lib/cjs/types/index.d.ts",
+        "default": "./lib/cjs/index.js"
+      }
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf ./lib",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "zod": "^3.22.4"
+  }
+}

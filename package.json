@@ -1,0 +1,42 @@
+{
+  "name": "next-api",
+  "author": {
+    "name": "yangga",
+    "email": "yangga0070@gmail.com",
+    "url": "http://github.com/yangga"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yangga/next-api.git"
+  },
+  "version": "0.0.1",
+  "description": "The packages of next-api",
+  "types": "./lib/cjs/types/index.d.ts",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "clean": "rm -rf ./lib",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "eslint": "^8.28.0",
+    "prettier": "^2.8.0",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "@next-api/core": "^0.0.1",
+    "@next-api/router": "^0.0.1",
+    "typescript": "^4.9.3"
+  },
+  "peerDependencies": {
+    "next": ">=14"
+  }
+}
