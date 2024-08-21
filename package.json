@@ -32,8 +32,8 @@
     "ts-node": "^10.9.1"
   },
   "dependencies": {
-    "@next-api/core": "^0.0.1",
-    "@next-api/router": "^0.0.1",
+    "@nystudio/nextapi-core": "^0.0.1",
+    "@nystudio/nextapi-router": "^0.0.1",
     "typescript": "^4.9.3"
   },
   "peerDependencies": {

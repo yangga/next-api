@@ -4,7 +4,7 @@ import { z } from "zod"
 
 import type { NextApiRouterValidationType } from "./api-router.type"
 import { isNextApiRouterFileValidation } from "./api-router-file.validation"
-import { isZodType } from "@next-api/core"
+import { isZodType } from "@nystudio/nextapi-core"
 
 export const toNextApiRouterValidation = (validation: NextApiRouterValidationType) => {
   const toZodObj = validation instanceof z.ZodType ? validation : z.object(validation)

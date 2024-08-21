@@ -1,6 +1,6 @@
-import { NextApiRouter } from "@next-api/router"
+import { NextApiRouter } from "@nystudio/nextapi-router"
 import nextApiRouterStatic from "../../router/lib/cjs/types/api-router"
-import { ApiError } from "@next-api/core"
+import { ApiError } from "@nystudio/nextapi-core"
 import { NextResponse } from "next/server"
 
 enum CircuitBreakerState {

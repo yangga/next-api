@@ -19,7 +19,13 @@
   "exclude": ["node_modules", "lib", "dist", "coverage", "test", "tests", "spec", "specs"],
   "references": [
     {
+      "path": "./packages/circuit-breaker"
+    },
+    {
       "path": "./packages/core"
+    },
+    {
+      "path": "./packages/openapi"
     },
     {
       "path": "./packages/router"

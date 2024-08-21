@@ -2,7 +2,7 @@
 import type { NextRequest, NextResponse } from "next/server"
 import type { ZodEffects, ZodObject, ZodRawShape, ZodTypeAny, ZodUnion, ZodUnionOptions } from "zod"
 
-import type { ExportTypeFromValidation } from "@next-api/core"
+import type { ExportTypeFromValidation } from "@nystudio/nextapi-core"
 
 export type NextApiRouterValidationType =
   | ZodRawShape

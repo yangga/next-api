@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import type { RouteConfig } from "@asteasolutions/zod-to-openapi"
 import { OpenApiGeneratorV3, OpenAPIRegistry } from "@asteasolutions/zod-to-openapi"
-import { isZodType } from "@next-api/core"
+import { isZodType } from "@nystudio/nextapi-core"
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs"
 import _ from "lodash"
 import type { ZodAny, ZodEffects, ZodObject, ZodRawShape, ZodType, ZodTypeAny, ZodUnion, ZodUnionOptions } from "zod"

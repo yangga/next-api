@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { ZodType } from "zod"
 
-import { isZodType } from "@next-api/core"
+import { isZodType } from "@nystudio/nextapi-core"
 
 export const parseFormDataWithValidation = (formData: FormData, validator: ZodType) => {
   const isArrayField = (key: string) => {
