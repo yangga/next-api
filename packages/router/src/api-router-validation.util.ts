@@ -6,8 +6,12 @@ import type { NextApiRouterValidationType } from "./api-router.type"
 import { isNextApiRouterFileValidation } from "./api-router-file.validation"
 import { isZodType } from "@nystudio/nextapi-core"
 
+// 'validation instanceof ZodType' is not working. es build issue.
 export const toNextApiRouterValidation = (validation: NextApiRouterValidationType) => {
-  const toZodObj = validation instanceof z.ZodType ? validation : z.object(validation)
+  const toZodObj =
+    (validation as any)._def?.typeName != null
+      ? (validation as Exclude<NextApiRouterValidationType, z.ZodRawShape>)
+      : z.object(validation as z.ZodRawShape)
 
   return convert(toZodObj)
 }

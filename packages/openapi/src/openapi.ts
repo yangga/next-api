@@ -211,8 +211,14 @@ const toValidatorForOpenApi = (validation: ValidationType | ZodAny, options?: {}
     v._def.openapi = validation._def.openapi
     return v
   }
-  if (validation instanceof z.ZodType) {
+
+  if (isZodType(validation, "ZodAny") || isZodType(validation, "ZodTypeAny")) {
     return validation
+  }
+
+  // 'validation instanceof ZodType' is not working. es build issue.
+  if ((validation as any)._def?.typeName != null) {
+    return validation as unknown as z.ZodType
   }
 
   // 여긴 일반 object 타입인 경우
