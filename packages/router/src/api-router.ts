@@ -181,6 +181,4 @@ export class NextApiRouter<RouterOption extends NextApiRouterOption, CustomField
   }
 }
 
-const nextApiRouterStatic = new NextApiRouter()
-
-export default nextApiRouterStatic
+export const nextApiRouterStatic = new NextApiRouter()

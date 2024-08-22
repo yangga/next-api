@@ -1,5 +1,5 @@
 import { NextApiRouter } from "@nystudio/nextapi-router"
-import nextApiRouterStatic from "../../router/lib/cjs/types/api-router"
+import { nextApiRouterStatic } from "@nystudio/nextapi-router"
 import { ApiError } from "@nystudio/nextapi-core"
 import { NextResponse } from "next/server"
 

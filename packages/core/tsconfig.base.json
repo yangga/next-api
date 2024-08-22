@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "module": "ESNext",
     "declaration": true,
     "declarationMap": true,
     "strict": true,
@@ -12,5 +13,31 @@
     "rootDir": "./src",
     "composite": true
   },
-  "exclude": ["node_modules", "lib", "dist", "coverage", "test", "tests", "spec", "specs"]
+  "exclude": [
+    "node_modules",
+    "lib",
+    "dist",
+    "coverage",
+    "test",
+    "tests",
+    "spec",
+    "specs",
+    "rollup.config.*",
+    "jest.config.*",
+    "webpack.config.*",
+    "gulpfile.*",
+    "Gruntfile.*",
+    "karma.conf.*",
+    "protractor.conf.*",
+    "tsconfig.json",
+    "tsconfig.base.json",
+    "tsconfig.build.json",
+    "tsconfig.test.json",
+    "tsconfig.eslint.json",
+    "tsconfig.jest.json",
+    "tsconfig.rollup.json",
+    "tsconfig.webpack.json",
+    "tsconfig.gulp.json",
+    "tsconfig.grunt.json"
+  ]
 }

@@ -111,10 +111,10 @@ export default ReactSwagger
 // src/app/openapi/page.tsx
 import ReactSwagger from "./react-swagger"
 
-import { createNextApiSwaggerSpec } from "@nystudio/nextapi-openapi"
+import { nextApiCreateNextApiSwaggerSpec } from "@nystudio/nextapi-openapi"
 
 export default async function IndexPage() {
-  const spec = createNextApiSwaggerSpec({
+  const spec = nextApiCreateNextApiSwaggerSpec({
     openapi: "3.0.0",
     info: {
       title: "Hello API",

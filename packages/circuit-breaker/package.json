@@ -9,11 +9,19 @@
     "type": "git",
     "url": "https://github.com/yangga/next-api.git"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The Circuit Breaker of next-api",
+  "keywords": [
+    "nextjs",
+    "api",
+    "routes",
+    "zod",
+    "circuit breaker"
+  ],
   "type": "commonjs",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.mjs",
   "exports": {
     ".": {
       "import": {
@@ -28,13 +36,12 @@
   },
   "scripts": {
     "clean": "rm -rf ./lib",
-    "build": "cp ../../README.md . && npm run clean && npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -p tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build": "cp ../../README.md . && npm run clean && rollup -c",
     "prepack": "npm run build"
   },
   "dependencies": {
     "@asteasolutions/zod-to-openapi": "^6.4.0",
+    "@nystudio/nextapi-router": "^0.0.3",
     "lodash": ">=4.0.0"
   },
   "devDependencies": {

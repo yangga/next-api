@@ -2,8 +2,7 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "target": "ES6",
-    "lib": ["ES6", "DOM", "DOM.ITERABLE"],
-    "module": "commonjs",
+    "lib": ["ES6", "DOM"],
     "moduleResolution": "node",
     "outDir": "./lib/cjs",
     "declarationDir": "./lib/cjs/types"
