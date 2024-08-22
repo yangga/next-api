@@ -2,6 +2,7 @@ import { NextApiRouter } from "@nystudio/nextapi-router"
 import { nextApiRouterStatic } from "@nystudio/nextapi-router"
 import { ApiError } from "@nystudio/nextapi-core"
 import { NextResponse } from "next/server"
+import { StatusCodes } from "http-status-codes"
 
 enum CircuitBreakerState {
   OPENED = "O",
@@ -60,7 +61,7 @@ export function nextApiCircuitBreaker(options: {
       } else {
         return nextApiRouterStatic.errorToResponse(
           ApiError.create({
-            status: 500,
+            status: StatusCodes.TOO_MANY_REQUESTS,
             message: "Retry after few minutes",
           }),
         )
