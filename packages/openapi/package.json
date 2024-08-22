@@ -36,6 +36,7 @@
     }
   },
   "scripts": {
+    "test": "jest",
     "clean": "rm -rf ./lib",
     "build": "cp ../../README.md . && npm run clean && rollup -c",
     "prepack": "npm run build"

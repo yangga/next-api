@@ -26,7 +26,7 @@ import { NextApiRouter } from '@nystudio/nextapi-router';
 // file: ApiRouter.ts
 export const routerSingleton = new NextApiRouter()
 
-// file: /src/app/api/route1.ts
+// file: /src/app/api/users/route.ts
 import { routerSingleton } from 'ApiRouter';
 
 export const POST = routerSingleton.apiRouter(
@@ -34,6 +34,7 @@ export const POST = routerSingleton.apiRouter(
     console.log("requested", request.data.name)
     return Promise.resolve({
       id: 12345,
+      name: request.data.name,
     })
   },
   {
@@ -43,12 +44,13 @@ export const POST = routerSingleton.apiRouter(
       }),
       response: z.object({
         id: z.number().int().positive(),
+        name: z.string(),
       }),
     },
   },
 );
 
-// file: /src/app/api/route2.ts
+// file: /src/app/api/users/[userId]/route.ts
 import { routerSingleton } from 'ApiRouter';
 
 export const GET = routerSingleton.apiRouter(async ({ request }) => {
@@ -72,7 +74,10 @@ npm i @nystudio/nextapi-openapi swagger-ui-react
 next-api registers routers in NextJS build time.
 
 ```typescript
-import { nextApiStoreRouterOpenapiDocument } from "@nystudio/nextapi-openapi"
+import { NextApiRouterOpenapiOption, nextApiStoreRouterOpenapiDocument } from "@nystudio/nextapi-openapi"
+
+// file: ApiRouter.ts
+const routerSingleton = new NextApiRouter<NextApiRouterOpenapiOption>() // <-- use openapi router type
 
 routerSingleton.addEventListener("onRouteAdded", async (options) => {
   try {
@@ -82,12 +87,38 @@ routerSingleton.addEventListener("onRouteAdded", async (options) => {
 
     console.error(
       // eslint-disable-next-line no-underscore-dangle
-      `[ERROR] failed ApiRouter.storeNextApiRouterOpenapiDocument: path[${options.__dirname}] method:[${options.method}]`,
+      `[ERROR] failed nextApiStoreRouterOpenapiDocument: path[${options.__dirname}] method:[${options.method}]`,
       err.message,
     )
     throw error
   }
 })
+
+// file: /src/app/api/users/[userId]/route.ts
+import { routerSingleton } from "ApiRouter"
+
+export const GET = routerSingleton.apiRouter(
+  async ({ request }) => {
+    console.log("requested", request.params.userId)
+    return Promise.resolve({
+      id: request.params.userId,
+      name: "test user",
+    })
+  },
+  {
+    __dirname,
+    method: "get",
+    validation: {
+      params: {
+        userId: z.number().int().positive(),
+      },
+      response: z.object({
+        id: z.number().int().positive(),
+        name: z.string(),
+      }),
+    },
+  },
+)
 ```
 
 ##### Rendering open api with NextJS

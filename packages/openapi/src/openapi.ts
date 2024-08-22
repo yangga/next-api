@@ -1,23 +1,21 @@
 /* eslint-disable no-underscore-dangle */
 import type { RouteConfig } from "@asteasolutions/zod-to-openapi"
-import { OpenApiGeneratorV3, OpenAPIRegistry } from "@asteasolutions/zod-to-openapi"
+import { extendZodWithOpenApi, OpenApiGeneratorV3, OpenAPIRegistry } from "@asteasolutions/zod-to-openapi"
 import { isZodType } from "@nystudio/nextapi-core"
+import { NextApiRouterValidationType } from "@nystudio/nextapi-router"
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs"
 import _ from "lodash"
-import type { ZodAny, ZodEffects, ZodObject, ZodRawShape, ZodType, ZodTypeAny, ZodUnion, ZodUnionOptions } from "zod"
+import type { ZodAny, ZodObject, ZodType } from "zod"
 import { z } from "zod"
+
+extendZodWithOpenApi(z)
 
 const ContentTypeJson = "application/json"
 const ContentTypeMultipartFormdata = "multipart/form-data"
 
 const OPENAPI_PREBUILT_DIR = `${process.cwd()}/.openapi/cache/prebuilt`
 
-type ValidationType =
-  | ZodRawShape
-  | ZodObject<ZodRawShape>
-  | ZodEffects<ZodObject<ZodRawShape>>
-  | ZodUnion<ZodUnionOptions>
-  | ZodTypeAny
+type ValidationType = NextApiRouterValidationType
 
 export type NextApiRouterOpenapiOption = {
   __dirname: string
@@ -171,7 +169,6 @@ const toValidatorForOpenApi = (validation: ValidationType | ZodAny, options?: {}
   }
   if (isZodType(validation, "ZodOptional")) {
     const v = toValidatorForOpenApi(validation._def.innerType, options).optional()
-
     v._def.openapi = validation._def.openapi
     return v
   }
@@ -192,6 +189,10 @@ const toValidatorForOpenApi = (validation: ValidationType | ZodAny, options?: {}
     const v = z
       .object(
         entries.reduce((prev, [key, value]) => {
+          if (typeof value === "function") {
+            return prev
+          }
+
           const childV = toValidatorForOpenApi(value, options)
           childV._def.openapi = value._def.openapi
           return {
