@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/yangga/next-api.git"
   },
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "The Core of next-api",
   "type": "commonjs",
   "types": "./lib/cjs/types/index.d.ts",
