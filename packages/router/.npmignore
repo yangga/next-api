@@ -4,8 +4,9 @@ __spec__/
 .eslintrc.json
 .openapi/
 .prettierrc.json
-*.mjs.map
 *.js.map
+*.mjs.map
 *.ts.map
+rollup.config.*
 src/
 tsconfig*.json
