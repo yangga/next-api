@@ -4,6 +4,7 @@ __spec__/
 .eslintrc.json
 .openapi/
 .prettierrc.json
+*.mjs.map
 *.js.map
 *.ts.map
 src/
