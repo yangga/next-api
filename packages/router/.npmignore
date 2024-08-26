@@ -1,3 +1,9 @@
+__mocks__/
+__spec__/
 !lib/
-tsconfig*.json
+.eslintrc.json
+.openapi/
+.prettierrc.json
+*.js.map
 src/
+tsconfig*.json
