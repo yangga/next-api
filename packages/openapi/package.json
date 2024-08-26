@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/yangga/next-api.git"
   },
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "The OpenAPI of next-api",
   "keywords": [
     "nextjs",
@@ -43,8 +43,8 @@
   },
   "dependencies": {
     "@asteasolutions/zod-to-openapi": "^6.4.0",
-    "@nystudio/nextapi-core": "^0.0.7",
-    "@nystudio/nextapi-router": "^0.0.7",
+    "@nystudio/nextapi-core": "^0.0.8",
+    "@nystudio/nextapi-router": "^0.0.8",
     "lodash": ">=4.0.0"
   },
   "devDependencies": {
