@@ -2,6 +2,8 @@
 
 next-api is a library that handles data validation of [Nextjs Api Routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) with the [Zod](https://zod.dev/) library.
 
+<a href="https://www.buymeacoffee.com/yangga"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=yangga&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+
 ## Requirement
 
 - Nextjs >= 14
