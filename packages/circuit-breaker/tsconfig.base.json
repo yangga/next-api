@@ -13,6 +13,7 @@
     "rootDir": "./src",
     "composite": true,
     "paths": {
+      "@nystudio/nextapi-core/*": ["../core/lib/esm/*"],
       "@nystudio/nextapi-router/*": ["../router/lib/esm/*"]
     }
   },

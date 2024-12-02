@@ -6,12 +6,16 @@ next-api is a library that handles data validation of [Nextjs Api Routes](https:
 
 ## Requirement
 
-- Nextjs >= 14
+- Nextjs >= 15
 
 ## Installation
 
 ```bash
+// if you are using NextJS >= 15
 npm i @nystudio/nextapi-core @nystudio/nextapi-router
+
+// if you are using NextJS == 14
+npm i @nystudio/nextapi-core@^0.0.9 @nystudio/nextapi-router@^0.0.9
 ```
 
 ## Features

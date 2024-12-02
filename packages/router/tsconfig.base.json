@@ -12,7 +12,9 @@
     "forceConsistentCasingInFileNames": true,
     "rootDir": "./src",
     "composite": true,
+    "baseUrl": ".",
     "paths": {
+      "@nystudio/nextapi-core/*": ["../core/lib/esm/*"],
       "next/*": ["../../node_modules/next/*"]
     }
   },
