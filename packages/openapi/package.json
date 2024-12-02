@@ -43,8 +43,8 @@
   },
   "dependencies": {
     "@asteasolutions/zod-to-openapi": "^6.4.0",
-    "@nystudio/nextapi-core": "^0.0.9",
-    "@nystudio/nextapi-router": "^0.0.9",
+    "@nystudio/nextapi-core": "^0.1.0",
+    "@nystudio/nextapi-router": "^0.1.0",
     "lodash": ">=4.0.0"
   },
   "devDependencies": {

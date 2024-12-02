@@ -50,7 +50,7 @@ export class NextApiRouter<RouterOption extends NextApiRouterOption, CustomField
               ...context,
               request: {
                 method: context.request.method,
-                ip: context.request.ip,
+                ip: context.request.headers.get("x-forwarded-for"),
                 url: context.request.url,
               },
               result: process.env.NODE_ENV === "development" ? context.result : undefined,
