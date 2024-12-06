@@ -48,6 +48,6 @@
     "@types/json-stable-stringify": "^1.0.36"
   },
   "peerDependencies": {
-    "next": ">=15"
+    "next": ">=15.0.0-0"
   }
 }
